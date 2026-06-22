@@ -1,5 +1,6 @@
 # Build / preview artifacts
-preview.png
+preview*.png
+_current-live.html
 
 # Never commit secrets or bundles (lesson learned)
 .env
