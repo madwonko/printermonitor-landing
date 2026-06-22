@@ -1,0 +1,11 @@
+# Build / preview artifacts
+preview.png
+
+# Never commit secrets or bundles (lesson learned)
+.env
+.env.*
+!.env.example
+*.tar.gz
+__pycache__/
+*.pyc
+node_modules/

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrinterMonitor Pro — Real-time printer & toner monitoring</title>
+    <meta name="description" content="Monitor your printers in real-time. Never run out of toner unexpectedly. SNMP printer monitoring across your whole network — toner levels, page counts, status, and predictive alerts.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="PrinterMonitor Pro — Never run out of toner unexpectedly">
+    <meta property="og:description" content="Real-time SNMP printer monitoring across your network. Toner levels, page counts, status, predictive alerts.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://prntr.org">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .accent-gradient { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+        .grid-bg {
+            background-image: radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0);
+            background-size: 32px 32px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- ===== Nav ===== -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="/" class="flex items-center gap-2">
+                    <img src="assets/logo.svg" alt="PrinterMonitor Pro" class="h-9 w-9">
+                    <span class="text-xl font-bold text-blue-600">PrinterMonitor Pro</span>
+                </a>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-gray-900 font-medium">Features</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-gray-900 font-medium">Pricing</a>
+                    <a href="https://github.com/printmonitor/printermonitor-proxy" class="text-gray-600 hover:text-gray-900 font-medium">Open Source</a>
+                    <a href="https://app.prntr.org/login" class="text-gray-600 hover:text-gray-900 font-medium">Log in</a>
+                    <a href="https://app.prntr.org/register" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 font-medium">Start Free Trial</a>
+                </div>
+                <button id="menu-btn" class="md:hidden text-gray-600" aria-label="Open menu">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white px-4 py-3 space-y-2">
+            <a href="#features" class="block py-2 text-gray-600 hover:text-gray-900">Features</a>
+            <a href="#pricing" class="block py-2 text-gray-600 hover:text-gray-900">Pricing</a>
+            <a href="https://github.com/printmonitor/printermonitor-proxy" class="block py-2 text-gray-600 hover:text-gray-900">Open Source</a>
+            <a href="https://app.prntr.org/login" class="block py-2 text-gray-600 hover:text-gray-900">Log in</a>
+            <a href="https://app.prntr.org/register" class="block bg-blue-600 text-white text-center px-4 py-2 rounded-lg hover:bg-blue-700">Start Free Trial</a>
+        </div>
+    </nav>
+
+    <!-- ===== Hero ===== -->
+    <header class="hero-gradient text-white">
+        <div class="grid-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+                <span class="inline-block bg-white/15 text-white text-sm font-medium px-3 py-1 rounded-full mb-6">🖨️ SNMP printer monitoring · made simple</span>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-6 max-w-4xl mx-auto">
+                    Never run out of toner unexpectedly
+                </h1>
+                <p class="text-xl sm:text-2xl text-white/90 max-w-2xl mx-auto mb-10">
+                    Monitor your printers in real-time across your entire network. Track toner, page counts, and status — and get alerts before supplies run out.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://app.prntr.org/register" class="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Start Free Trial</a>
+                    <a href="https://github.com/printmonitor/printermonitor-proxy" class="bg-white/10 border border-white/30 text-white px-8 py-3 rounded-lg font-semibold hover:bg-white/20 transition">View on GitHub</a>
+                </div>
+                <p class="text-white/70 text-sm mt-6">14-day free trial on all paid plans · No credit card required to start</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== Features ===== -->
+    <section id="features" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Everything you need to monitor printers</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Works with any SNMP-enabled printer. Set up in five minutes with a one-line installer.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- card -->
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+                    <div class="text-3xl mb-4">🖨️</div>
+                    <h3 class="text-xl font-bold mb-2">Real-Time Monitoring</h3>
+                    <p class="text-gray-600">Track toner levels, page counts, and online/offline status across all printers. Automatic SNMP discovery finds them for you.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+                    <div class="text-3xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold mb-2">Analytics &amp; Insights</h3>
+                    <p class="text-gray-600">Historical metrics, interactive graphs, and trend analysis over 7, 30, or 90 days. Predict when toner will run out.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+                    <div class="text-3xl mb-4">🌐</div>
+                    <h3 class="text-xl font-bold mb-2">Multi-Network Support</h3>
+                    <p class="text-gray-600">Monitor printers across multiple subnets and locations from one centralized dashboard. Built for distributed offices.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+                    <div class="text-3xl mb-4">🚀</div>
+                    <h3 class="text-xl font-bold mb-2">Easy Deployment</h3>
+                    <p class="text-gray-600">One-line installer, five-minute setup. Runs on a Raspberry Pi or any Linux device. Auto-updates and self-healing.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+                    <div class="text-3xl mb-4">🔒</div>
+                    <h3 class="text-xl font-bold mb-2">Security &amp; Privacy</h3>
+                    <p class="text-gray-600">Self-hosted proxy keeps data on your network. Encrypted TLS communication, JWT authentication, secure key management.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-100">
+                    <div class="text-3xl mb-4">💳</div>
+                    <h3 class="text-xl font-bold mb-2">Flexible Pricing</h3>
+                    <p class="text-gray-600">Free tier for personal use, paid tiers for business. 14-day free trial on all paid plans. Cancel anytime, no contracts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== How it works ===== -->
+    <section class="py-16 bg-white border-y border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid sm:grid-cols-3 gap-8 text-center">
+                <div>
+                    <div class="text-blue-600 text-2xl font-extrabold mb-2">1</div>
+                    <h3 class="font-bold mb-1">Install the proxy</h3>
+                    <p class="text-gray-600 text-sm">One line on any Linux device with your API key.</p>
+                </div>
+                <div>
+                    <div class="text-blue-600 text-2xl font-extrabold mb-2">2</div>
+                    <h3 class="font-bold mb-1">Auto-discovery</h3>
+                    <p class="text-gray-600 text-sm">Printers appear in your dashboard automatically via SNMP.</p>
+                </div>
+                <div>
+                    <div class="text-blue-600 text-2xl font-extrabold mb-2">3</div>
+                    <h3 class="font-bold mb-1">Monitor &amp; relax</h3>
+                    <p class="text-gray-600 text-sm">Track toner and get alerts before supplies run out.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Pricing ===== -->
+    <section id="pricing" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Simple, transparent pricing</h2>
+                <p class="text-xl text-gray-600">14-day free trial on all paid plans · Save 17% with annual billing</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+                <!-- Free -->
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-100 flex flex-col">
+                    <h3 class="text-lg font-bold mb-1">Free</h3>
+                    <p class="text-4xl font-extrabold mb-1">$0<span class="text-base font-medium text-gray-500">/mo</span></p>
+                    <p class="text-gray-500 text-sm mb-6">For personal use</p>
+                    <ul class="space-y-2 text-gray-600 text-sm mb-8 flex-1">
+                        <li>✓ 1 proxy device</li>
+                        <li>✓ 3 printers</li>
+                        <li>✓ 7 days history</li>
+                    </ul>
+                    <a href="https://app.prntr.org/register" class="block text-center border border-blue-600 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 font-medium">Get started</a>
+                </div>
+                <!-- Maker -->
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-100 flex flex-col">
+                    <h3 class="text-lg font-bold mb-1">Maker</h3>
+                    <p class="text-4xl font-extrabold mb-1">$10<span class="text-base font-medium text-gray-500">/mo</span></p>
+                    <p class="text-gray-500 text-sm mb-6">For small teams</p>
+                    <ul class="space-y-2 text-gray-600 text-sm mb-8 flex-1">
+                        <li>✓ 2 proxy devices</li>
+                        <li>✓ 10 printers</li>
+                        <li>✓ 90 days history</li>
+                    </ul>
+                    <a href="https://app.prntr.org/register" class="block text-center border border-blue-600 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 font-medium">Start trial</a>
+                </div>
+                <!-- Pro (highlighted) -->
+                <div class="bg-white rounded-lg shadow-xl p-8 border-2 border-blue-600 flex flex-col relative">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">Most popular</span>
+                    <h3 class="text-lg font-bold mb-1">Pro</h3>
+                    <p class="text-4xl font-extrabold mb-1">$50<span class="text-base font-medium text-gray-500">/mo</span></p>
+                    <p class="text-gray-500 text-sm mb-6">For growing businesses</p>
+                    <ul class="space-y-2 text-gray-600 text-sm mb-8 flex-1">
+                        <li>✓ 5 proxy devices</li>
+                        <li>✓ 50 printers</li>
+                        <li>✓ 1 year history</li>
+                    </ul>
+                    <a href="https://app.prntr.org/register" class="block text-center bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 font-medium">Start trial</a>
+                </div>
+                <!-- Enterprise -->
+                <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-100 flex flex-col">
+                    <h3 class="text-lg font-bold mb-1">Enterprise</h3>
+                    <p class="text-4xl font-extrabold mb-1">$150<span class="text-base font-medium text-gray-500">/mo</span></p>
+                    <p class="text-gray-500 text-sm mb-6">For large deployments</p>
+                    <ul class="space-y-2 text-gray-600 text-sm mb-8 flex-1">
+                        <li>✓ 10 proxy devices</li>
+                        <li>✓ Unlimited printers</li>
+                        <li>✓ Unlimited history</li>
+                    </ul>
+                    <a href="https://app.prntr.org/register" class="block text-center border border-blue-600 text-blue-600 px-4 py-2 rounded-lg hover:bg-blue-50 font-medium">Contact us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="accent-gradient text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+            <h2 class="text-3xl font-bold mb-4">Stop guessing about your printers</h2>
+            <p class="text-xl text-white/90 mb-8">Set up monitoring in five minutes. Free for personal use.</p>
+            <a href="https://app.prntr.org/register" class="inline-block bg-white text-pink-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">Start Free Trial</a>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="bg-gray-900 text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-3">
+                        <img src="assets/logo.svg" alt="" class="h-8 w-8">
+                        <span class="text-white font-bold">PrinterMonitor Pro</span>
+                    </div>
+                    <p class="text-sm">Real-time SNMP printer monitoring for IT teams.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Product</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#features" class="hover:text-white">Features</a></li>
+                        <li><a href="#pricing" class="hover:text-white">Pricing</a></li>
+                        <li><a href="https://app.prntr.org" class="hover:text-white">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Developers</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="https://github.com/printmonitor/printermonitor-proxy" class="hover:text-white">Proxy (Open Source)</a></li>
+                        <li><a href="https://api.prntr.org" class="hover:text-white">API</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3">Support</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="mailto:support@prntr.org" class="hover:text-white">support@prntr.org</a></li>
+                        <li><a href="https://github.com/printmonitor/printermonitor-pro/issues" class="hover:text-white">GitHub Issues</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-10 pt-6 text-sm text-center">
+                © <span id="year"></span> PrinterMonitor Pro · Made for IT professionals everywhere
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        // current year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
