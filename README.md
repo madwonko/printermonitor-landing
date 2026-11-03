@@ -2,7 +2,7 @@
 
 Static marketing site for [PrinterMonitor Pro](https://prntr.org).
 
-- Single `index.html`, Tailwind (CDN) + Inter font — no build step.
+- `index.html` plus `legal/`, `tools/`, and `blog/`. Tailwind (CDN), no build step.
 - Brand: `blue-600`, hero gradient `#667eea→#764ba2`, CTA gradient `#f093fb→#f5576c`.
 - Assets in `assets/` (logo + favicon).
 
